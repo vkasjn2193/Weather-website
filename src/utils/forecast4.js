@@ -7,9 +7,11 @@ const forecast = (latitude, longitude, callback) => {
           if (error) {
             callback('Unable to connect', undefined)
         } else if (body.error) {
+            console.log(body.error)
             callback('unable to find Forecast location try another location', undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + ' degrees out . There is a ' + body.currently.precipProbability + ' % chance of rain')
+            
+            callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + ' degrees out . high temperature is '+ body.daily.data[0].temperatureHigh+' and low temperature is '+body.daily.data[0].temperatureLow +'. There is a ' + body.currently.precipProbability + ' % chance of rain')
         }
     })
 }
