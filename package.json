@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app5.js"
+    "start": "node src/app5.js",
+    "dev":"nodemon src/app5.js -e js,hbs"
   },
   "keywords": [],
   "author": "",
